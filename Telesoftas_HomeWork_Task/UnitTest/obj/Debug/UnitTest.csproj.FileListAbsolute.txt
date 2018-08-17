@@ -1,0 +1,8 @@
+C:\Users\drentelis\Documents\Visual Studio 2015\Projects\Telesoftas_HomeWork_Task\UnitTest\bin\Debug\UnitTest.dll
+C:\Users\drentelis\Documents\Visual Studio 2015\Projects\Telesoftas_HomeWork_Task\UnitTest\bin\Debug\UnitTest.pdb
+C:\Users\drentelis\Documents\Visual Studio 2015\Projects\Telesoftas_HomeWork_Task\UnitTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\drentelis\Documents\Visual Studio 2015\Projects\Telesoftas_HomeWork_Task\UnitTest\bin\Debug\Telesoftas_HomeWork_Task.exe
+C:\Users\drentelis\Documents\Visual Studio 2015\Projects\Telesoftas_HomeWork_Task\UnitTest\bin\Debug\Telesoftas_HomeWork_Task.pdb
+C:\Users\drentelis\Documents\Visual Studio 2015\Projects\Telesoftas_HomeWork_Task\UnitTest\obj\Debug\UnitTest.csprojResolveAssemblyReference.cache
+C:\Users\drentelis\Documents\Visual Studio 2015\Projects\Telesoftas_HomeWork_Task\UnitTest\obj\Debug\UnitTest.dll
+C:\Users\drentelis\Documents\Visual Studio 2015\Projects\Telesoftas_HomeWork_Task\UnitTest\obj\Debug\UnitTest.pdb

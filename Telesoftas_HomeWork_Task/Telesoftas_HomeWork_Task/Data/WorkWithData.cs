@@ -9,7 +9,7 @@ namespace Telesoftas_HomeWork_Task.Data
     /// <summary>
     /// Data structure to get line data
     /// </summary>
-    struct DataStrucuter
+    public struct DataStrucuter
     {
         #region Public properties
         public string Text { get; }
@@ -28,7 +28,7 @@ namespace Telesoftas_HomeWork_Task.Data
     /// <summary>
     /// Singleton class to work with data
     /// </summary>
-    class WorkWithData
+    public class WorkWithData
     {
         #region Singleton variables
         private static readonly object _lock = new object();
@@ -96,6 +96,10 @@ namespace Telesoftas_HomeWork_Task.Data
             {
                 throw new FormatException(ex.Message);
             }
+            catch(InvalidOperationException)
+            {
+                throw new InvalidOperationException("Check string issue with string List");
+            }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
@@ -109,41 +113,56 @@ namespace Telesoftas_HomeWork_Task.Data
         /// <returns></returns>
         public string OutputString(DataStrucuter data)
         {
-            string answerToReturn = "";
-            string LastWord = "";
-            foreach (var item in data.Text.Split(' ').ToList())
+            try
             {
-                string temp = LastWord;
-                if (item.ToCharArray().Length < data.CountOfLetters)
+                if(data.CountOfLetters == 0)
                 {
-                    
-                    LastWord += item + " ";
-                    if ((LastWord.ToCharArray().Length - 1) > data.CountOfLetters)
-                    {
-                        LastWord = temp.Remove(temp.Length - 1);
-                        answerToReturn += LastWord + "\n";
-                        LastWord = item + " ";
-                    }
-                    else
+                    throw new IndexOutOfRangeException("Issue with letter counter or structure, check input data");
+                }
+                string answerToReturn = "";
+                string LastWord = "";
+                foreach (var item in data.Text.Split(' ').ToList())
+                {
+                    string temp = LastWord;
+                    if (item.ToCharArray().Length < data.CountOfLetters)
                     {
 
-                    }
-                }
-                else
-                {
-                    if (LastWord == "")
-                    {
-                        answerToReturn += RecursiveLongWordSolver(item, data.CountOfLetters, out LastWord);
+                        LastWord += item + " ";
+                        if ((LastWord.ToCharArray().Length - 1) > data.CountOfLetters)
+                        {
+                            LastWord = temp.Remove(temp.Length - 1);
+                            answerToReturn += LastWord + "\n";
+                            LastWord = item + " ";
+                        }
+                        else
+                        {
+
+                        }
                     }
                     else
                     {
-                        answerToReturn += LastWord + "\n";
-                        answerToReturn += RecursiveLongWordSolver(item, data.CountOfLetters, out LastWord);
+                        if (LastWord == "")
+                        {
+                            answerToReturn += RecursiveLongWordSolver(item, data.CountOfLetters, out LastWord);
+                        }
+                        else
+                        {
+                            answerToReturn += LastWord + "\n";
+                            answerToReturn += RecursiveLongWordSolver(item, data.CountOfLetters, out LastWord);
+                        }
                     }
                 }
+                return answerToReturn + LastWord;
             }
-            return answerToReturn+LastWord;
-            
+            catch(NullReferenceException)
+            {
+                throw new NullReferenceException("Check input string issue with DataStruct");
+            }
+            catch(IndexOutOfRangeException ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+                return ex.Message;
+            }
         }
         
         /// <summary>
