@@ -11,13 +11,15 @@ namespace Telesoftas_HomeWork_Task.Controller
 
     class Controller : IViewAdapter, IModeladapter
     {
-
+        #region Factory delegates
         public delegate IView ViewFactory();
         public delegate IModel ModelFactory();
+        #endregion
 
+        #region Private Variable field
         private IView _viewer;
         private IModel _model;
-
+        #endregion
 
         #region Constructor
         public Controller(ViewFactory viewer, ModelFactory model)
@@ -29,15 +31,23 @@ namespace Telesoftas_HomeWork_Task.Controller
         }
         #endregion
 
-
+        #region Public methods field
+        /// <summary>
+        /// Provide input for model to do the work
+        /// </summary>
+        /// <param name="data"></param>
         public void SetInputData(List<string> data)
         {
             _viewer.SetForDataOutput(_model.FormatOutputData(data));
         }
 
+        /// <summary>
+        /// Start MVC work
+        /// </summary>
         public void Start()
         {
-            _viewer.DataFromView();
+            _viewer.StartView();
         }
+        #endregion
     }
 }

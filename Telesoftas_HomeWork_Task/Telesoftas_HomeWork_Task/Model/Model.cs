@@ -9,15 +9,18 @@ namespace Telesoftas_HomeWork_Task.Model
 {
     class Model : IModel
     {
+        #region Private variable field
         private IModeladapter _adapter;
+        #endregion
 
+        #region Public method field
         public string FormatOutputData(List<string> rawData)
         {
             List<DataStrucuter> data = new List<DataStrucuter>();
             while (rawData.Count > 1)
             {
                 List<string> tempList = new List<string>();
-                tempList.Add(rawData.First()); //TODO fix this code segment
+                tempList.Add(rawData.First());
                 rawData.RemoveAt(0);
                 tempList.Add(rawData.First());
                 rawData.RemoveAt(0);
@@ -36,6 +39,7 @@ namespace Telesoftas_HomeWork_Task.Model
         {
             _adapter = adapter;
         }
+        #endregion
 
     }
 }

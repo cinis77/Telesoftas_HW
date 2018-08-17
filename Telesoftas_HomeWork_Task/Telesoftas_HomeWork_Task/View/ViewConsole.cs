@@ -8,10 +8,12 @@ namespace Telesoftas_HomeWork_Task.View
 {
     class ViewConsole : IView
     {
-
+        #region Private variable field
         private IViewAdapter _adapter;
+        #endregion
 
-        public void DataFromView()
+        #region Public method field
+        public void StartView()
         {
             List<string> tempList = new List<string>();
             tempList.Add(Console.ReadLine());
@@ -29,7 +31,7 @@ namespace Telesoftas_HomeWork_Task.View
         {
             Console.WriteLine(data);
         }
-
+        #endregion
 
     }
 }

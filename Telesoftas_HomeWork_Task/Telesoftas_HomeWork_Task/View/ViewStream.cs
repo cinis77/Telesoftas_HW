@@ -10,13 +10,16 @@ namespace Telesoftas_HomeWork_Task.View
 {
     class ViewStream : IView
     {
-
+        #region Private variable field
         private IViewAdapter _adapter;
-        private string[] _path = null;
-        [STAThread]
-        public void DataFromView()
+        #endregion
+
+        #region Public method field
+
+        public void StartView()
         {
             OpenFileDialog ofd = new OpenFileDialog();
+            string[] _path = null;
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 _path = ofd.FileNames;
@@ -48,8 +51,7 @@ namespace Telesoftas_HomeWork_Task.View
             MessageBox.Show("Select where to store output file");
             string pathing = null;
             using (FolderBrowserDialog fbd = new FolderBrowserDialog())
-            {
-                
+            {  
                 if (fbd.ShowDialog() == DialogResult.OK)
                 {
                     pathing = fbd.SelectedPath;
@@ -57,9 +59,9 @@ namespace Telesoftas_HomeWork_Task.View
             }
             using (StreamWriter writer = new StreamWriter(pathing+"\\output.csv"))
             {
-                writer.WriteLine(data);
+                writer.WriteLineAsync(data);
             }
-
         }
+        #endregion
     }
 }

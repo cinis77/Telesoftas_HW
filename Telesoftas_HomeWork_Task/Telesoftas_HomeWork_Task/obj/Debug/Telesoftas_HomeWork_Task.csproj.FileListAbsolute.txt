@@ -1,0 +1,6 @@
+c:\users\drentelis\documents\visual studio 2015\Projects\Telesoftas_HomeWork_Task\Telesoftas_HomeWork_Task\bin\Debug\Telesoftas_HomeWork_Task.exe.config
+c:\users\drentelis\documents\visual studio 2015\Projects\Telesoftas_HomeWork_Task\Telesoftas_HomeWork_Task\bin\Debug\Telesoftas_HomeWork_Task.exe
+c:\users\drentelis\documents\visual studio 2015\Projects\Telesoftas_HomeWork_Task\Telesoftas_HomeWork_Task\bin\Debug\Telesoftas_HomeWork_Task.pdb
+c:\users\drentelis\documents\visual studio 2015\Projects\Telesoftas_HomeWork_Task\Telesoftas_HomeWork_Task\obj\Debug\Telesoftas_HomeWork_Task.csprojResolveAssemblyReference.cache
+c:\users\drentelis\documents\visual studio 2015\Projects\Telesoftas_HomeWork_Task\Telesoftas_HomeWork_Task\obj\Debug\Telesoftas_HomeWork_Task.exe
+c:\users\drentelis\documents\visual studio 2015\Projects\Telesoftas_HomeWork_Task\Telesoftas_HomeWork_Task\obj\Debug\Telesoftas_HomeWork_Task.pdb

@@ -6,24 +6,39 @@ using System.Threading.Tasks;
 
 namespace Telesoftas_HomeWork_Task.Data
 {
+    /// <summary>
+    /// Data structure to get line data
+    /// </summary>
     struct DataStrucuter
     {
+        #region Public properties
         public string Text { get; }
         public int CountOfLetters { get; }
+        #endregion
 
+        #region Constructor
         public DataStrucuter(string text, int countofletters)
         {
             Text = text;
             CountOfLetters = countofletters;
         }
+        #endregion
     }
 
-
+    /// <summary>
+    /// Singleton class to work with data
+    /// </summary>
     class WorkWithData
     {
+        #region Singleton variables
         private static readonly object _lock = new object();
         private static WorkWithData _dataType = new WorkWithData();
+        #endregion
 
+        #region Public property field
+        /// <summary>
+        /// Singleton property to access methods
+        /// </summary>
         public static WorkWithData Instance
         {
             get
@@ -38,12 +53,22 @@ namespace Telesoftas_HomeWork_Task.Data
                 }
             }
         }
+        #endregion
 
+        #region Constructor
         protected WorkWithData()
         {
 
         }
+        #endregion
 
+        #region Public methods field
+
+        /// <summary>
+        /// Parse to parse data from string to stucture format
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
         public DataStrucuter ParseDataToNewFormat(List<string> data)
         {
             int number = 0;
@@ -77,6 +102,11 @@ namespace Telesoftas_HomeWork_Task.Data
             }
         }
 
+        /// <summary>
+        /// Method to create output string out of provided data
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
         public string OutputString(DataStrucuter data)
         {
             string answerToReturn = "";
@@ -116,7 +146,13 @@ namespace Telesoftas_HomeWork_Task.Data
             
         }
         
-
+        /// <summary>
+        /// Recursive method for word longer than line char amount
+        /// </summary>
+        /// <param name="text"></param>
+        /// <param name="count"></param>
+        /// <param name="leftWordPart"></param>
+        /// <returns></returns>
         private string RecursiveLongWordSolver(string text, int count, out string leftWordPart)
         {
             char[] partOfText = text.ToCharArray();
@@ -146,5 +182,6 @@ namespace Telesoftas_HomeWork_Task.Data
                 }
             }
         }
+        #endregion
     }
 }

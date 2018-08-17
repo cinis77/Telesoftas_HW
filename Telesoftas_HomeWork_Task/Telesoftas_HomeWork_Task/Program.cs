@@ -18,9 +18,9 @@ namespace Telesoftas_HomeWork_Task
             DoWork(c);
         }
 
-        public static IModel MyDataModel() => new Model.Model();
+        static IModel MyDataModel() => new Model.Model();
 
-        public static IView MyView() => new ViewStream();
+        static IView MyView() => new ViewStream();
 
         static void DoWork(Controller.Controller c)
         {
@@ -31,7 +31,7 @@ namespace Telesoftas_HomeWork_Task
             catch (Exception ex)
             {
 
-                DoWork(c);
+                System.Windows.Forms.MessageBox.Show(ex.Message);
             }
         }
     }
