@@ -50,14 +50,17 @@ namespace Telesoftas_HomeWork_Task.View
         {
             MessageBox.Show("Select where to store output file");
             string pathing = null;
-            using (FolderBrowserDialog fbd = new FolderBrowserDialog())
-            {  
-                if (fbd.ShowDialog() == DialogResult.OK)
+            using (SaveFileDialog sfd = new SaveFileDialog())
+            {
+                sfd.DefaultExt = ".csv";
+                sfd.AddExtension = true;
+                sfd.FileName = "output.csv";
+                if (sfd.ShowDialog() == DialogResult.OK)
                 {
-                    pathing = fbd.SelectedPath;
+                    pathing = sfd.FileName;
                 }
             }
-            using (StreamWriter writer = new StreamWriter(pathing+"\\output.csv"))
+            using (StreamWriter writer = new StreamWriter(pathing))
             {
                 writer.WriteLineAsync(data);
             }
